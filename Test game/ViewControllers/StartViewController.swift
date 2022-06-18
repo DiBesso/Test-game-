@@ -16,7 +16,6 @@ class StartViewController: UIViewController {
     private let namesForButtons = NamesForButtons ()
     
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -26,17 +25,18 @@ class StartViewController: UIViewController {
     
     
     
-
+    
+    //MARK: - Setting Labels and Buttons
     
     func setLabels() {
         headerLabel.text = namesForLabels.headerGame
     }
 
     func setButtons() {
-        startGameButton.titleLabel?.text = namesForButtons.start
+        startGameButton.setTitle(namesForButtons.start, for: .normal)
+        startGameButton.setTitleColor(.white, for: .normal)
         startGameButton.backgroundColor = .blue
         startGameButton.layer.cornerRadius = 10
-        startGameButton.tintColor = .white
     }
 }
 

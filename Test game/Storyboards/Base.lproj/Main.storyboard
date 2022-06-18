@@ -22,18 +22,19 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4sx-Ze-XrF">
-                                <rect key="frame" x="20" y="438" width="280" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4sx-Ze-XrF">
+                                <rect key="frame" x="20" y="437" width="280" height="31"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" title="Button">
                                     <attributedString key="attributedTitle">
-                                        <fragment content="Button">
-                                            <attributes>
-                                                <font key="NSFont" metaFont="system" size="15"/>
-                                            </attributes>
-                                        </fragment>
+                                        <fragment content="Button"/>
                                     </attributedString>
                                 </state>
+                                <buttonConfiguration key="configuration" style="plain">
+                                    <attributedString key="attributedTitle">
+                                        <fragment content="Button"/>
+                                    </attributedString>
+                                </buttonConfiguration>
                                 <connections>
                                     <segue destination="LzO-KL-9xj" kind="show" id="qmx-Hb-gaL"/>
                                 </connections>
@@ -73,10 +74,14 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="efh-mB-gNl">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="efh-mB-gNl">
                                 <rect key="frame" x="20" y="437" width="280" height="31"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain">
+                                    <attributedString key="attributedTitle">
+                                        <fragment content="Button"/>
+                                    </attributedString>
+                                </buttonConfiguration>
                                 <connections>
                                     <segue destination="8MD-94-A4F" kind="show" id="wjL-ba-UVa"/>
                                 </connections>
@@ -95,7 +100,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="Bvd-yU-fDh"/>
                     <connections>
-                        <outlet property="enterButton" destination="efh-mB-gNl" id="ypq-rJ-rJX"/>
+                        <outlet property="enterButton" destination="efh-mB-gNl" id="Jnd-ak-OD3"/>
                         <outlet property="guessingTextField" destination="WRj-bf-zzU" id="gie-HV-EGc"/>
                     </connections>
                 </viewController>
