@@ -7,11 +7,17 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class StartViewController: UIViewController {
 
+    @IBOutlet weak var headerLabel: UILabel!
+    @IBOutlet weak var startGameButton: UIButton!
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+
+        
     }
 
 

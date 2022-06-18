@@ -9,21 +9,31 @@
 /* Begin PBXBuildFile section */
 		A41B491C2859C4EB00066B18 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A41B491B2859C4EB00066B18 /* AppDelegate.swift */; };
 		A41B491E2859C4EB00066B18 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A41B491D2859C4EB00066B18 /* SceneDelegate.swift */; };
-		A41B49202859C4EB00066B18 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A41B491F2859C4EB00066B18 /* ViewController.swift */; };
+		A41B49202859C4EB00066B18 /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A41B491F2859C4EB00066B18 /* StartViewController.swift */; };
 		A41B49232859C4EB00066B18 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A41B49212859C4EB00066B18 /* Main.storyboard */; };
 		A41B49252859C4ED00066B18 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A41B49242859C4ED00066B18 /* Assets.xcassets */; };
 		A41B49282859C4ED00066B18 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A41B49262859C4ED00066B18 /* LaunchScreen.storyboard */; };
+		A41B4930285DAE7400066B18 /* NumberGuessingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A41B492F285DAE7400066B18 /* NumberGuessingViewController.swift */; };
+		A41B4932285DAED400066B18 /* ComputerGuessingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A41B4931285DAED400066B18 /* ComputerGuessingViewController.swift */; };
+		A41B4934285DAEED00066B18 /* PlayerGuesingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A41B4933285DAEED00066B18 /* PlayerGuesingViewController.swift */; };
+		A41B4936285DAF1700066B18 /* ScoresViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A41B4935285DAF1700066B18 /* ScoresViewController.swift */; };
+		A41B493A285DB4E600066B18 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = A41B4939285DB4E600066B18 /* Model.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		A41B49182859C4EA00066B18 /* Test game.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Test game.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A41B491B2859C4EB00066B18 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A41B491D2859C4EB00066B18 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		A41B491F2859C4EB00066B18 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		A41B491F2859C4EB00066B18 /* StartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
 		A41B49222859C4EB00066B18 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A41B49242859C4ED00066B18 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A41B49272859C4ED00066B18 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A41B49292859C4ED00066B18 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A41B492F285DAE7400066B18 /* NumberGuessingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberGuessingViewController.swift; sourceTree = "<group>"; };
+		A41B4931285DAED400066B18 /* ComputerGuessingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComputerGuessingViewController.swift; sourceTree = "<group>"; };
+		A41B4933285DAEED00066B18 /* PlayerGuesingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerGuesingViewController.swift; sourceTree = "<group>"; };
+		A41B4935285DAF1700066B18 /* ScoresViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoresViewController.swift; sourceTree = "<group>"; };
+		A41B4939285DB4E600066B18 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +66,52 @@
 		A41B491A2859C4EB00066B18 /* Test game */ = {
 			isa = PBXGroup;
 			children = (
-				A41B491B2859C4EB00066B18 /* AppDelegate.swift */,
-				A41B491D2859C4EB00066B18 /* SceneDelegate.swift */,
-				A41B491F2859C4EB00066B18 /* ViewController.swift */,
-				A41B49212859C4EB00066B18 /* Main.storyboard */,
-				A41B49242859C4ED00066B18 /* Assets.xcassets */,
-				A41B49262859C4ED00066B18 /* LaunchScreen.storyboard */,
+				A41B493B285DB50000066B18 /* SupportFiles */,
+				A41B4937285DB4B500066B18 /* ViewControllers */,
+				A41B4938285DB4D400066B18 /* Model */,
+				A41B493C285DB54C00066B18 /* Storyboards */,
 				A41B49292859C4ED00066B18 /* Info.plist */,
+				A41B49242859C4ED00066B18 /* Assets.xcassets */,
 			);
 			path = "Test game";
+			sourceTree = "<group>";
+		};
+		A41B4937285DB4B500066B18 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				A41B491F2859C4EB00066B18 /* StartViewController.swift */,
+				A41B492F285DAE7400066B18 /* NumberGuessingViewController.swift */,
+				A41B4931285DAED400066B18 /* ComputerGuessingViewController.swift */,
+				A41B4933285DAEED00066B18 /* PlayerGuesingViewController.swift */,
+				A41B4935285DAF1700066B18 /* ScoresViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		A41B4938285DB4D400066B18 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				A41B4939285DB4E600066B18 /* Model.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		A41B493B285DB50000066B18 /* SupportFiles */ = {
+			isa = PBXGroup;
+			children = (
+				A41B491B2859C4EB00066B18 /* AppDelegate.swift */,
+				A41B491D2859C4EB00066B18 /* SceneDelegate.swift */,
+			);
+			path = SupportFiles;
+			sourceTree = "<group>";
+		};
+		A41B493C285DB54C00066B18 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				A41B49212859C4EB00066B18 /* Main.storyboard */,
+				A41B49262859C4ED00066B18 /* LaunchScreen.storyboard */,
+			);
+			path = Storyboards;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -138,9 +185,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A41B49202859C4EB00066B18 /* ViewController.swift in Sources */,
+				A41B4934285DAEED00066B18 /* PlayerGuesingViewController.swift in Sources */,
+				A41B49202859C4EB00066B18 /* StartViewController.swift in Sources */,
+				A41B4936285DAF1700066B18 /* ScoresViewController.swift in Sources */,
 				A41B491C2859C4EB00066B18 /* AppDelegate.swift in Sources */,
+				A41B4932285DAED400066B18 /* ComputerGuessingViewController.swift in Sources */,
+				A41B4930285DAE7400066B18 /* NumberGuessingViewController.swift in Sources */,
 				A41B491E2859C4EB00066B18 /* SceneDelegate.swift in Sources */,
+				A41B493A285DB4E600066B18 /* Model.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
