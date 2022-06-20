@@ -21,7 +21,9 @@ class ComputerGuessingViewController: UIViewController {
     private let namesForLabels = NamesForLabels ()
     private let namesForButtons = NamesForButtons ()
     private var tryNumber = 1
-    private var number = 100
+    
+    private var minNumber = 1
+    private var maxNumber = 100
     private var randomNumber = Int.random(in: 1...100)
     
     override func viewDidLoad() {
@@ -30,6 +32,9 @@ class ComputerGuessingViewController: UIViewController {
         setLabels()
         setButtons()
     }
+    
+    
+    //MARK: - Setting Labels and Buttons
     
     func setLabels() {
         tryNumberLabel.text = namesForLabels.tryNumber + String(tryNumber)
@@ -62,11 +67,14 @@ class ComputerGuessingViewController: UIViewController {
         moreButton.layer.borderColor = CGColor.init(red: 0, green: 0, blue: 0, alpha: 1)
     }
     
+    
+    //MARK: - Action
+    
     @IBAction func lessButtonAction(_ sender: Any) {
-        number = randomNumber
-        randomNumber = Int.random(in: 1...number)
-        tryNumber += 1
-        setLabels()
+            maxNumber = randomNumber
+            randomNumber = Int.random(in: minNumber...maxNumber)
+            tryNumber += 1
+            setLabels()
     }
     @IBAction func equalButtonAction(_ sender: Any) {
         
@@ -74,8 +82,8 @@ class ComputerGuessingViewController: UIViewController {
     }
     
     @IBAction func moreButtonAction(_ sender: Any) {
-        number = randomNumber
-        randomNumber = Int.random(in: number...100)
+        minNumber = randomNumber
+        randomNumber = Int.random(in: minNumber...maxNumber)
         tryNumber += 1
         setLabels()
     }
