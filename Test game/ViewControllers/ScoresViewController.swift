@@ -29,6 +29,7 @@ class ScoresViewController: UIViewController {
         result()
     }
     
+    
     func result() {
         if playerTries > computerTries {
             winLabel.text = namesForLabels.computerWin
@@ -38,6 +39,7 @@ class ScoresViewController: UIViewController {
             winLabel.text = namesForLabels.draw
         }
     }
+    
     //MARK: - Setting Labels and Buttons
     
     func setLabels() {
