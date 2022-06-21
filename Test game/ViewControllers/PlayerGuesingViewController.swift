@@ -21,20 +21,22 @@ class PlayerGuesingViewController: UIViewController, UITextFieldDelegate {
     
     private var randomNumber = Int.random(in: 1...100)
     
-    let minValue = 1
-    let maxValue = 100
+    private var minValue = 1
+    private var maxValue = 100
     lazy var valuesRange = minValue...maxValue
     
+    var computerTries = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         playerVariantTextField.delegate = self
-        
+        computerAnswerLabel.text = ""
         setLabels()
         setButtons()
     }
     
+    //MARK: - Setting Labels and Buttons
     
     func setLabels() {
         tryNumberLabel.text = namesForLabels.tryNumber + String(tryNumber)
@@ -48,23 +50,37 @@ class PlayerGuesingViewController: UIViewController, UITextFieldDelegate {
         guessButton.layer.cornerRadius = 10
     }
     
+    
+    // MARK: - Actions
+    
     @IBAction func guessButtonAction(_ sender: Any) {
-//        let number = randomNumber
-//        if Int(playerGuessingLabel.text ?? "") == number {
-//            func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//                guard segue.identifier == "playerToScoreSegue" else { return }
-//                guard let scoresVC = segue.destination as? ScoresViewController else { return }
-//                scoresVC.playerScoresLabel.text = String(tryNumber)
-//        }
-//        } else if Int(playerGuessingLabel.text ?? "") ?? 1 < number {
-//            tryNumber += 1
-//            computerAnswerLabel.text = namesForLabels.computerAnswerLess
-//            setLabels()
-//        } else if Int(playerGuessingLabel.text ?? "") ?? 1 > number {
-//            tryNumber += 1
-//            computerAnswerLabel.text = namesForLabels.computerAnswerMore
-//            setLabels()
-//        }
+        
+        if let number: Int = Int(playerVariantTextField.text!) {
+            
+            switch number {
+            case randomNumber :
+                performSegue(withIdentifier: "playerToScoreSegue", sender: nil)
+            case (randomNumber + 1)...maxValue:
+                maxValue = number
+                tryNumber += 1
+                computerAnswerLabel.text = namesForLabels.computerAnswerLess
+                setLabels()
+            case minValue...(randomNumber - 1):
+                minValue = number
+                tryNumber += 1
+                computerAnswerLabel.text = namesForLabels.computerAnswerMore
+                setLabels()
+            default:
+                break
+            }
+        }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard segue.identifier == "playerToScoreSegue" else { return }
+        guard let scoresVC = segue.destination as? ScoresViewController else { return }
+        scoresVC.playerTries = tryNumber
+        scoresVC.computerTries = computerTries
     }
     
     // MARK: - TextField
@@ -88,11 +104,10 @@ class PlayerGuesingViewController: UIViewController, UITextFieldDelegate {
     }
 }
 
-
+//MARK: - Extension
 
 extension PlayerGuesingViewController {
     
-
     func textFieldDidBeginEditing(_ textField: UITextField) {
         textField.keyboardType = .asciiCapableNumberPad
         let keyboardToolbar = UIToolbar()

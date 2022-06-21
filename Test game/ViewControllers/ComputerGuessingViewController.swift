@@ -22,7 +22,7 @@ class ComputerGuessingViewController: UIViewController {
     private let namesForButtons = NamesForButtons ()
     private var tryNumber = 1
     
-    private var minNumber = 1
+    private var minNumber = 0
     private var maxNumber = 100
     private var randomNumber = Int.random(in: 1...100)
     
@@ -42,7 +42,6 @@ class ComputerGuessingViewController: UIViewController {
         computerVariantLabel.text = namesForLabels.computerVariant + String(randomNumber) + "?"
         moreLessLabel.text = namesForLabels.moreLess
     }
-    
     
     func setButtons() {
         lessButton.setTitle(namesForButtons.less, for: .normal)
@@ -71,21 +70,33 @@ class ComputerGuessingViewController: UIViewController {
     //MARK: - Action
     
     @IBAction func lessButtonAction(_ sender: Any) {
+        if randomNumber > (minNumber + 1) {
             maxNumber = randomNumber
-            randomNumber = Int.random(in: minNumber...maxNumber)
+            randomNumber = Int.random(in: (minNumber + 1)..<maxNumber)
             tryNumber += 1
             setLabels()
+        } else {
+            lessButton.isEnabled = false
+        }
     }
     @IBAction func equalButtonAction(_ sender: Any) {
-        
-        
+        performSegue(withIdentifier: "computerToPlayerVC", sender: nil)
     }
     
     @IBAction func moreButtonAction(_ sender: Any) {
-        minNumber = randomNumber
-        randomNumber = Int.random(in: minNumber...maxNumber)
-        tryNumber += 1
-        setLabels()
+        if randomNumber < (maxNumber - 1) {
+            minNumber = randomNumber
+            randomNumber = Int.random(in: (minNumber + 1)..<maxNumber)
+            tryNumber += 1
+            setLabels()
+        } else {
+            moreButton.isEnabled = false
+        }
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard segue.identifier == "computerToPlayerVC" else { return }
+        guard let playerGuessingVC = segue.destination as? PlayerGuesingViewController else { return }
+        playerGuessingVC.computerTries = tryNumber
+    }
 }

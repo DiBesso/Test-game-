@@ -25,7 +25,6 @@ class StartViewController: UIViewController {
     
     
     
-    
     //MARK: - Setting Labels and Buttons
     
     func setLabels() {

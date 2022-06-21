@@ -14,8 +14,8 @@ class NumberGuessingViewController: UIViewController, UITextFieldDelegate  {
     
     private let namesForButtons = NamesForButtons ()
     
-    let minValue = 1
-    let maxValue = 100
+    private let minValue = 1
+    private let maxValue = 100
     lazy var valuesRange = minValue...maxValue
     
     
@@ -41,7 +41,6 @@ class NumberGuessingViewController: UIViewController, UITextFieldDelegate  {
     }
     
     
-    
     // MARK: - TextField
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
@@ -56,7 +55,6 @@ class NumberGuessingViewController: UIViewController, UITextFieldDelegate  {
             enterButton.isUserInteractionEnabled = true
             enterButton.alpha = 1
         }
-        
         return valuesRange.contains(Int(newText) ?? minValue - 1)
     }
     
@@ -65,7 +63,7 @@ class NumberGuessingViewController: UIViewController, UITextFieldDelegate  {
     }
 }
 
-
+//MARK: - Extension
 
 extension NumberGuessingViewController {
     

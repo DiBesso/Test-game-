@@ -22,6 +22,7 @@ struct NamesForLabels {
     let computerTries = "Computer's tries count: "
     let playerWin = "You win"
     let computerWin = "Computer Win"
+    let draw = "Draw"
 }
 
 struct NamesForButtons {
